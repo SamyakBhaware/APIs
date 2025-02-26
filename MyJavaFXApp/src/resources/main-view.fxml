@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+
+   <!-- Room Status Title -->
+   <Label layoutX="300.0" layoutY="20.0" text="Room Status">
+      <font>
+         <Font name="System" size="18" />
+      </font>
+   </Label>
+
+   <AnchorPane layoutX="250.0" layoutY="80.0">
+
+
+
+      <!-- Room 1 -->
+      <Label layoutX="10.0" layoutY="10.0" text="Room 1">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton1" layoutX="80.0" layoutY="10.0" onAction="#handleButtonClick1" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel1" layoutX="140.0" layoutY="10.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton1" layoutX="250.0" layoutY="10.0" onAction="#handleCleanClick1" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light1" fill="GREEN" layoutX="320.0" layoutY="18.0" radius="8.0" />
+
+
+
+
+      <!-- Room 2 -->
+      <Label layoutX="10.0" layoutY="50.0" text="Room 2">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+      <!-- Repeat for remaining rooms -->
+
+
+
+      <!-- Room 3 -->
+      <Label layoutX="10.0" layoutY="90.0" text="Room 3">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton3" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel3" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton3" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light3" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 4 -->
+      <Label layoutX="10.0" layoutY="130.0" text="Room 4">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 5 -->
+      <Label layoutX="10.0" layoutY="170.0" text="Room 5">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 6 -->
+      <Label layoutX="10.0" layoutY="210.0" text="Room 6">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 7 -->
+      <Label layoutX="10.0" layoutY="250.0" text="Room 7">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 8 -->
+      <Label layoutX="10.0" layoutY="290.0" text="Room 8">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+      <!-- Room 9 -->
+      <Label layoutX="10.0" layoutY="330.0" text="Room 9">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton2" layoutX="80.0" layoutY="50.0" onAction="#handleButtonClick2" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel2" layoutX="140.0" layoutY="50.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton2" layoutX="250.0" layoutY="50.0" onAction="#handleCleanClick2" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light2" fill="GREEN" layoutX="320.0" layoutY="58.0" radius="8.0" />
+
+
+
+
+
+
+      <!-- Room 10 -->
+      <Label layoutX="10.0" layoutY="365.0" text="Room 10">
+         <font><Font name="System" size="14" /></font>
+      </Label>
+      <Button fx:id="myButton10" layoutX="80.0" layoutY="362.0" onAction="#handleButtonClick10" text="Add">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Label fx:id="weightLabel10" layoutX="140.0" layoutY="366.0" text="Weight: 0 Kg">
+         <font><Font name="System" size="12" /></font>
+      </Label>
+      <Button fx:id="cleanButton10" layoutX="250.0" layoutY="362.0" onAction="#handleCleanClick10" text="Clean">
+         <font><Font name="System" size="12" /></font>
+      </Button>
+      <Circle fx:id="light10" fill="GREEN" layoutX="320.0" layoutY="375.0" radius="8.0" />
+      <Button fx:id="myButton101" layoutX="80.0" layoutY="327.0" onAction="#handleButtonClick10" text="Add">
+         <font>
+            <Font name="System" size="12" />
+         </font>
+      </Button>
+      <Label fx:id="weightLabel101" layoutX="140.0" layoutY="331.0" text="Weight: 0 Kg">
+         <font>
+            <Font name="System" size="12" />
+         </font>
+      </Label>
+      <Button fx:id="cleanButton101" layoutX="250.0" layoutY="327.0" onAction="#handleCleanClick10" text="Clean">
+         <font>
+            <Font name="System" size="12" />
+         </font>
+      </Button>
+      <Circle fx:id="light101" fill="GREEN" layoutX="320.0" layoutY="340.0" radius="8.0" />
+   </AnchorPane>
+
+</AnchorPane>
