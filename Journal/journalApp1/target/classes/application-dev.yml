@@ -1,0 +1,13 @@
+spring.mail.host: smtp.gmail.com
+spring.mail.port: 587
+spring.mail.username: samyakbhawareytl@gmail.com
+spring.mail.password: "hkqzumyyiwiowmwx"
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+
+spring.data.mongodb.uri: mongodb+srv://Samyak:Samyak@cluster0.uchg7nf.mongodb.net/?appName=Cluster0
+spring.data.mongodb.database: JournalAppDB
+spring.data.mongodb.auto-index-creation: true
+
+
+

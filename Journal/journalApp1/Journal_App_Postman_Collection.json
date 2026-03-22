@@ -1,0 +1,409 @@
+{
+  "info": {
+    "_postman_id": "journal-app-collection",
+    "name": "Journal App API",
+    "description": "Complete testing collection for the Journal Application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "PUBLIC - User Registration",
+      "item": [
+        {
+          "name": "Create New User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"password123\",\n  \"roles\": [\"USER\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/public/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["public", "create"]
+            },
+            "description": "Register a new user. No authentication required."
+          },
+          "response": []
+        },
+        {
+          "name": "Public Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/public",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["public"]
+            },
+            "description": "Test public endpoint - returns greeting message"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "JOURNAL - CRUD Operations",
+      "item": [
+        {
+          "name": "Create Journal Entry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"My First Journal Entry\",\n  \"content\": \"This is my first journal entry. Today was amazing!\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/journal/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "create"]
+            },
+            "description": "Create a new journal entry. Requires authentication.\nAuth: testuser:password123"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Journals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "all"]
+            },
+            "description": "Retrieve all journals for authenticated user.\nAuth: testuser:password123"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Journal Entry",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Journal Title\",\n  \"content\": \"This is the updated content with more details!\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/journal/JOURNAL_ID_HERE",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "JOURNAL_ID_HERE"]
+            },
+            "description": "Update an existing journal entry. Replace JOURNAL_ID_HERE with actual ID from Get All Journals response."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Journal (Hard Delete)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/JOURNAL_ID_HERE",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "JOURNAL_ID_HERE"]
+            },
+            "description": "Permanently delete a journal entry."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "TRASH - Soft Delete Operations",
+      "item": [
+        {
+          "name": "Trash Journal (Soft Delete)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/trash?id=JOURNAL_ID_HERE",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "trash"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "JOURNAL_ID_HERE"
+                }
+              ]
+            },
+            "description": "Move a journal to trash (soft delete). Can be restored later."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trashed Journals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/trashed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "trashed"]
+            },
+            "description": "View all trashed journals for authenticated user."
+          },
+          "response": []
+        },
+        {
+          "name": "Restore All Trashed Journals",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/restore",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "restore"]
+            },
+            "description": "Restore all trashed journals back to active journals."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "USER - User Management",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/user/testuser",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "testuser"]
+            },
+            "description": "Get user profile and their journals."
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"newemail@example.com\",\n  \"password\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/user",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user"]
+            },
+            "description": "Update user email and password."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dGVzdHVzZXI6cGFzc3dvcmQxMjM="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/user/testuser",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "testuser"]
+            },
+            "description": "Delete user account completely."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "EXAMPLE - Complete Workflow",
+      "item": [
+        {
+          "name": "1. Create User - John",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"john_doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"john123456\",\n  \"roles\": [\"USER\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/public/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["public", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Create Journal Entry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic am9obl9kb2U6am9objEyMzQ1Ng=="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Day 1 - Started My Journal\",\n  \"content\": \"Excited to start journaling! This will help me track my thoughts and progress.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/journal/create",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. View All Journals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic am9obl9kb2U6am9objEyMzQ1Ng=="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/journal/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["journal", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic am9obl9kb2U6am9objEyMzQ1Ng=="
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/user/john_doe",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", "john_doe"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
+
