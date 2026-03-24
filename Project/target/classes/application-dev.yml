@@ -1,0 +1,26 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://Samyak:Samyak@cluster0.uchg7nf.mongodb.net/?appName=Cluster0
+      database: TodoDB
+      auto-index-creation: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: samyakbhawareytl@gmail.com
+    password: "hkqzumyyiwiowmwx"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+    port: 8082
+
+weather_api_key: "e838e025e2cfab8ac8c646bce80d379c"
+
+
+
